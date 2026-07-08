@@ -46,4 +46,4 @@ npm run test:run   # run the tests
 I would be happy to answer any questions or walk through the code in more detail.
 
 Best regards,
-[Your name]
+Maxym Dryha
