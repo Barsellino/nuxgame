@@ -1,0 +1,22 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Vue 3, Vite, Vue Router, Composition API, JavaScript (no TypeScript/Pinia).
+  API base URL: https://jsonplaceholder.typicode.com
+  HTTP client: native fetch (no axios).
+  CSS: Flexbox and/or CSS Grid, responsive layout.
+  Figma reference (login page): https://www.figma.com/design/CoAspt2CyD6g3kXdXHdUOL/Untitled?node-id=1-789
+  Phone login matching: normalize before compare — lowercase, keep only digits and "x".
+  Username login matching: case-sensitive exact match.
+  Auth session: store logged-in user in sessionStorage.
+  Favorites: store todo ids in localStorage key "favoriteTodoIds".
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours

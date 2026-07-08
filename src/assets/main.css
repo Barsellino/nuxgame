@@ -1,0 +1,40 @@
+@import './base.css';
+
+:root {
+  --color-bg: #eef2f7;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8fafc;
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-emphasis: #1e293b;
+  --color-muted: #64748b;
+  --color-border: #cbd5e1;
+  --color-border-light: #e2e8f0;
+  --color-error: #dc2626;
+  --color-completed-bg: #f0fdf4;
+  --color-favorite: #f59e0b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+#app {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
