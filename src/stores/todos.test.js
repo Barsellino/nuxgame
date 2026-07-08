@@ -2,6 +2,7 @@ import { createPinia, setActivePinia } from 'pinia'
 import { describe, expect, it, vi } from 'vitest'
 import * as api from '../api/jsonplaceholder'
 import { TODO_ERRORS } from '../constants/messages'
+import { STORAGE_KEYS } from '../constants/storage'
 import { mockTodos } from '../test/fixtures'
 import { useAuthStore } from './auth'
 import { useFavoritesStore } from './favorites'
@@ -21,6 +22,16 @@ describe('todos store', () => {
     expect(store.todos).toEqual(mockTodos)
     expect(store.loading).toBe(false)
     expect(store.error).toBe('')
+  })
+
+  it('falls back to empty created todos for corrupt localStorage', async () => {
+    localStorage.setItem(STORAGE_KEYS.CREATED_TODOS_BY_USER, 'not-json')
+    vi.spyOn(api, 'fetchTodos').mockResolvedValue(mockTodos)
+    const store = useTodosStore()
+
+    await store.loadTodos()
+
+    expect(store.todos).toEqual(mockTodos)
   })
 
   it('sets error when loading fails', async () => {
